@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fahrenheit to Celsius</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Convert Fahrenheit to Celsius</h1>
+    <input type="text" id="demo" placeholder="Enter Fahrenheit Here">
+    <p id="result"></p>
+
+
+    <script>
+        function results(f){
+            return (5/9)* (f-32);
+        }
+
+        // var f = demo;
+        // document.getElementById('demo').innerHTML=results;
+        document.getElementById('demo').addEventListener('input', function() {
+            var f = parseFloat(this.value);
+            if (!isNaN(f)) {
+                document.getElementById('result').textContent = results(f).toFixed(2) + ' °C';
+            } else {
+                document.getElementById('result').textContent = 'Please enter a valid number';
+            }
+        });
+    </script>
+</body>
+
+</html>
